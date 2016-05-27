@@ -1,5 +1,6 @@
 #include "model.h"
 #include "tgaimage.h"
+#include "geometry.h"
 
 #include <stdio.h>
 
@@ -7,8 +8,8 @@ const TGAColor white = TGAColor(255, 255, 255, 255);
 const TGAColor red   = TGAColor(255, 0,   0,   255);
 const TGAColor green = TGAColor(0,   255, 0,   255);
 
-const int width  = 200;
-const int height = 200;
+const int width  = 800;
+const int height = 800;
 
 void line(vec2i p0, vec2i p1, TGAImage &image, TGAColor color) {
     bool steep = false;
@@ -59,6 +60,7 @@ void triangle(vec2i t0, vec2i t1, vec2i t2, TGAImage &image, TGAColor color) {
 
 int main(int argc, char** argv){
     model m;
+    vec3D light_dir = {0, 0, -1};
 
     if (2 == argc) {
         model_load(&m, argv[1]);
@@ -69,31 +71,26 @@ int main(int argc, char** argv){
 
     TGAImage image(width, height, TGAImage::RGB);
 
-    // for (int i = 0; i < m.fn; i++){
-    //     for (int j = 0; j < 3; j++){
-    //         vec3D v1 = m.verts[m.faces[i][j]];
-    //         vec3D v2 = m.verts[m.faces[i][(j+1)%3]];
+    for (int i = 0; i < m.fn; i++){
+        vec2i screen_coords[3];
+        vec3D world_coords[3];
+        for (int j = 0; j < 3; j++){
+            vec3D v1 = m.verts[m.faces[i][j]];
+            screen_coords[j].x = (v1.x + 1.0) * width/2.0;
+            screen_coords[j].y = (v1.y + 1.0) * height/2.0;
 
-    //         int x0 = (v1.x + 1.0) * width/2.;
-    //         int y0 = (v1.y + 1.0) * height/2.;
-    //         int x1 = (v2.x + 1.0) * width/2.;
-    //         int y1 = (v2.y + 1.0) * height/2.;
-    //         line(x0, y0, x1, y1, image, white);
-    //     }
-    // }
+            world_coords[j] = m.verts[m.faces[i][j]];
+        }
 
-    vec2i v1 = {10, 70};
-    vec2i v2 = {50, 160};
-    vec2i v3 = {70, 80};
-    vec2i v4 = {180, 50};
-    vec2i v5 = {150, 1};
-    vec2i v6 = {70, 180};
+        vec3D n = v_vector_product(v_sub(world_coords[2], world_coords[0]), 
+                v_sub(world_coords[1], world_coords[0]));
 
-    vec2i t0[3] = {v1, v2, v3};
-    vec2i t1[3] = {v4, v5, v6};
-
-    triangle(t0[0], t0[1], t0[2], image, red);
-    triangle(t1[0], t1[1], t1[2], image, white);
+        n = v_normilize(n);
+        float intensity = v_scalar_product(n, light_dir);
+        if (intensity>0) {
+            triangle(screen_coords[0], screen_coords[1], screen_coords[2], image, TGAColor(intensity*255, intensity*255, intensity*255, 255));
+        }
+    }
 
 
     // model_print(&m);
