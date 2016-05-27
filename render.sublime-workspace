@@ -1,0 +1,2366 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"model",
+				"model_load	(model.h)"
+			],
+			[
+				"vec",
+				"vec3D"
+			],
+			[
+				"d",
+				"def	#ifndef … #define … #endif"
+			],
+			[
+				"tga",
+				"tgaimage"
+			],
+			[
+				"TG",
+				"TGAColor"
+			],
+			[
+				"im",
+				"img1"
+			],
+			[
+				"DEAD",
+				"DEAD_MOB	(world.h)"
+			],
+			[
+				"BU",
+				"BulletState::NOT_EXIST	(pistole.cpp)"
+			],
+			[
+				"bull",
+				"bullet_array"
+			],
+			[
+				"Mo",
+				"MobState::DEAD"
+			],
+			[
+				"coll",
+				"collision_event	(player.h)"
+			],
+			[
+				"bul",
+				"bullet	(pistole.h)"
+			],
+			[
+				"speed",
+				"speed_dir	(mob.cpp)"
+			],
+			[
+				"dyna",
+				"dynamic_cast	(mob.cpp)"
+			],
+			[
+				"wo",
+				"worldEntity"
+			],
+			[
+				"of",
+				"ofSetColor	(mob.cpp)"
+			],
+			[
+				"in",
+				"inc	#include \"…\""
+			],
+			[
+				"wor",
+				"worldEntity"
+			],
+			[
+				"en",
+				"entityB"
+			],
+			[
+				"ent",
+				"entityB"
+			],
+			[
+				"inc",
+				"include	(mob.cpp)"
+			],
+			[
+				"box",
+				"boxContactListener	(mob.cpp)"
+			],
+			[
+				"get",
+				"GetPosition"
+			],
+			[
+				"MobS",
+				"MobState::MAY_ATTACK"
+			],
+			[
+				"worl",
+				"world_ptr"
+			],
+			[
+				"bo",
+				"bodyBUserData"
+			],
+			[
+				"stat",
+				"static_cast"
+			],
+			[
+				"bod",
+				"body_tmp"
+			],
+			[
+				"spee",
+				"speed_dir"
+			],
+			[
+				"ve",
+				"ofVec2f"
+			],
+			[
+				"W",
+				"W_KEY_PRESS	(ofApp.h)"
+			],
+			[
+				"key",
+				"key_pressed"
+			],
+			[
+				"pl",
+				"player::update	(player.cpp)"
+			],
+			[
+				"pro",
+				"project_base_path"
+			],
+			[
+				"chan",
+				"change	(ClangAutoComplete.sublime-settings)"
+			],
+			[
+				"keypo",
+				"keypoints"
+			],
+			[
+				"TM_",
+				"TM_SQDIFF	instance"
+			],
+			[
+				"TM",
+				"TM_CCOEFF	instance"
+			],
+			[
+				"match",
+				"matchTemplate	function"
+			],
+			[
+				"dest",
+				"destroyAllWindows	function"
+			],
+			[
+				"LIN",
+				"LINE_AA	instance"
+			],
+			[
+				"Ho",
+				"HoughLines	function"
+			],
+			[
+				"sob",
+				"sobely	statement"
+			],
+			[
+				"tas",
+				"taskDiv"
+			],
+			[
+				"status",
+				"status_data"
+			],
+			[
+				"createT",
+				"createTaskDivById"
+			],
+			[
+				"remo",
+				"removeDivChild"
+			],
+			[
+				"filte",
+				"filtered_list	statement"
+			],
+			[
+				"time",
+				"time_send	statement"
+			],
+			[
+				"maste",
+				"master_config	statement"
+			],
+			[
+				"res",
+				"response	statement"
+			],
+			[
+				"se",
+				"server	statement"
+			],
+			[
+				"cl",
+				"client	statement"
+			],
+			[
+				"exe",
+				"exec_command	function"
+			],
+			[
+				"engie",
+				"engine_available	statement"
+			],
+			[
+				"engine",
+				"engine_available"
+			],
+			[
+				"file",
+				"file_storage	statement"
+			],
+			[
+				"print",
+				"print_message	function"
+			],
+			[
+				"ret",
+				"ret_code	statement"
+			],
+			[
+				"zip",
+				"zip_file_path"
+			],
+			[
+				"sev",
+				"serve_forever	function"
+			],
+			[
+				"HT",
+				"HTTPMasterListener	class"
+			],
+			[
+				"task",
+				"task_id"
+			],
+			[
+				"resul",
+				"result_filename"
+			],
+			[
+				"resu",
+				"result_filename	statement"
+			],
+			[
+				"run",
+				"run_command_with_timeout	function"
+			],
+			[
+				"stderr",
+				"stderr_value	statement"
+			],
+			[
+				"stdout",
+				"stdout_value	statement"
+			],
+			[
+				"sen",
+				"send_header	function"
+			],
+			[
+				"pa",
+				"path	statement"
+			],
+			[
+				"url",
+				"url_splited	statement"
+			],
+			[
+				"task_",
+				"task_status	statement"
+			],
+			[
+				"engi",
+				"engine_id	statement"
+			],
+			[
+				"prin",
+				"print_message	function"
+			],
+			[
+				"add",
+				"address	statement"
+			],
+			[
+				"eng",
+				"engine_list"
+			],
+			[
+				"ex",
+				"exit	function"
+			],
+			[
+				"path",
+				"path_to_task_folder	param"
+			],
+			[
+				"engin",
+				"engine_id	param"
+			],
+			[
+				"req",
+				"request_content	statement"
+			],
+			[
+				"dump",
+				"dumps	function"
+			],
+			[
+				"fil",
+				"file_abs_path	statement"
+			],
+			[
+				"con",
+				"conf_data	statement"
+			],
+			[
+				"clien",
+				"clientHTTPlistener	module"
+			],
+			[
+				"x",
+				"x-terminal-emulator"
+			],
+			[
+				"whe",
+				"wheel_turn	statement"
+			],
+			[
+				"track",
+				"track_tile_size	statement"
+			],
+			[
+				"engine_",
+				"engine_id"
+			],
+			[
+				"tim",
+				"timeout	statement"
+			],
+			[
+				"eli",
+				"elistener	statement"
+			],
+			[
+				"E",
+				"EngineListener	class"
+			],
+			[
+				"lis",
+				"listener	statement"
+			],
+			[
+				"Cl",
+				"ClientListener	class"
+			],
+			[
+				"cli",
+				"client_listener	module"
+			],
+			[
+				"send",
+				"send_task	function"
+			],
+			[
+				"ta",
+				"task_quere	statement"
+			],
+			[
+				"re",
+				"recv"
+			],
+			[
+				"user",
+				"userpass	statement"
+			],
+			[
+				"En",
+				"EngineInfo	class"
+			],
+			[
+				"abs",
+				"absolute_filename	statement"
+			],
+			[
+				"pat",
+				"path_to_task_folder	statement"
+			],
+			[
+				"T",
+				"Task	class"
+			],
+			[
+				"path_to_task_",
+				"path_to_task_folder"
+			],
+			[
+				"Ta",
+				"TaskPool	class"
+			],
+			[
+				"clo",
+				"close_connection"
+			],
+			[
+				"client",
+				"clients_list	statement"
+			],
+			[
+				"weat",
+				"weatherwidget"
+			],
+			[
+				"wifi",
+				"wifiwidget"
+			],
+			[
+				"text",
+				"textbox"
+			],
+			[
+				"read",
+				"read_from_stdin"
+			],
+			[
+				"sy",
+				"synapse_list	statement"
+			],
+			[
+				"neur",
+				"neuron	forstmt"
+			],
+			[
+				"neu",
+				"neuron	forstmt"
+			],
+			[
+				"sum",
+				"sum_activiti	(neuron.py)"
+			],
+			[
+				"syn",
+				"synapse_list"
+			],
+			[
+				"sho",
+				"shortestDist"
+			],
+			[
+				"dis",
+				"distanceUR"
+			],
+			[
+				"win",
+				"windowStartY"
+			],
+			[
+				"O",
+				"World_object"
+			],
+			[
+				"bui",
+				"building_array	(world.pde)"
+			],
+			[
+				"mob",
+				"mob_array"
+			],
+			[
+				"Wo",
+				"World	(shooter.pde)"
+			],
+			[
+				"chec",
+				"checkCollideForMobs"
+			],
+			[
+				"Pi",
+				"PictoleBulletState"
+			],
+			[
+				"check",
+				"checkCollideForMobs	(worldObject.pde)"
+			],
+			[
+				"pri",
+				"println	println var"
+			],
+			[
+				"id",
+				"id_counter"
+			],
+			[
+				"pr",
+				"println	println var"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "model.h",
+			"settings":
+			{
+				"buffer_size": 173,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "model.c",
+			"settings":
+			{
+				"buffer_size": 284,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "// Place your settings in the file \"User/Preferences.sublime-settings\", which\n// overrides the settings in here.\n//\n// Settings may also be placed in file type specific options files, for\n// example, in Packages/Python/Python.sublime-settings for python files.\n{\n    // Sets the colors used within the text area\n    \"color_scheme\": \"Packages/Color Scheme - Default/Monokai.tmTheme\",\n\n    // Note that the font_face and font_size are overridden in the platform\n    // specific settings file, for example, \"Preferences (Linux).sublime-settings\".\n    // Because of this, setting them here will have no effect: you must set them\n    // in your User File Preferences.\n    \"font_face\": \"\",\n    \"font_size\": 10,\n\n    // Valid options are \"no_bold\", \"no_italic\", \"no_antialias\", \"gray_antialias\",\n    // \"subpixel_antialias\", \"no_round\" (OS X only), \"gdi\" (Windows only) and\n    // \"directwrite\" (Windows only)\n    \"font_options\": [],\n\n    // Characters that are considered to separate words\n    \"word_separators\": \"./\\\\()\\\"'-:,.;<>~!@#$%^&*|+=[]{}`~?\",\n\n    // Set to false to prevent line numbers being drawn in the gutter\n    \"line_numbers\": true,\n\n    // Set to false to hide the gutter altogether\n    \"gutter\": true,\n\n    // Spacing between the gutter and the text\n    \"margin\": 4,\n\n    // Fold buttons are the triangles shown in the gutter to fold regions of text\n    \"fold_buttons\": true,\n\n    // Hides the fold buttons unless the mouse is over the gutter\n    \"fade_fold_buttons\": true,\n\n    // Columns in which to display vertical rulers\n    \"rulers\": [],\n\n    // Set to true to turn spell checking on by default\n    \"spell_check\": false,\n\n    // The number of spaces a tab is considered equal to\n    \"tab_size\": 4,\n\n    // Set to true to insert spaces when tab is pressed\n    \"translate_tabs_to_spaces\": false,\n\n    // If translate_tabs_to_spaces is true, use_tab_stops will make tab and\n    // backspace insert/delete up to the next tabstop\n    \"use_tab_stops\": true,\n\n    // Set to false to disable detection of tabs vs. spaces on load\n    \"detect_indentation\": true,\n\n    // Calculates indentation automatically when pressing enter\n    \"auto_indent\": true,\n\n    // Makes auto indent a little smarter, e.g., by indenting the next line\n    // after an if statement in C. Requires auto_indent to be enabled.\n    \"smart_indent\": true,\n\n    // Adds whitespace up to the first open bracket when indenting. Requires\n    // auto_indent to be enabled.\n    \"indent_to_bracket\": false,\n\n    // Trims white space added by auto_indent when moving the caret off the\n    // line.\n    \"trim_automatic_white_space\": true,\n\n    // Disables horizontal scrolling if enabled.\n    // May be set to true, false, or \"auto\", where it will be disabled for\n    // source code, and otherwise enabled.\n    \"word_wrap\": \"auto\",\n\n    // Set to a value other than 0 to force wrapping at that column rather than the\n    // window width\n    \"wrap_width\": 0,\n\n    // Set to false to prevent word wrapped lines from being indented to the same\n    // level\n    \"indent_subsequent_lines\": true,\n\n    // Draws text centered in the window rather than left aligned\n    \"draw_centered\": false,\n\n    // Controls auto pairing of quotes, brackets etc\n    \"auto_match_enabled\": true,\n\n    // Word list to use for spell checking\n    \"dictionary\": \"Packages/Language - English/en_US.dic\",\n\n    // Sets which scopes are checked for spelling errors\n    \"spelling_selector\": \"markup.raw, source string.quoted - punctuation - meta.preprocessor.c.include, source comment - source comment.block.preprocessor, -(source, constant, keyword, storage, support, variable, markup.underline.link, meta.tag)\",\n\n    // Set to true to draw a border around the visible rectangle on the minimap.\n    // The color of the border will be determined by the \"minimapBorder\" key in\n    // the color scheme\n    \"draw_minimap_border\": false,\n\n    // Always visualise the viewport on the minimap, as opposed to only\n    // showing it on mouse over\n    \"always_show_minimap_viewport\": false,\n\n    // If enabled, will highlight any line with a caret\n    \"highlight_line\": false,\n\n    // Valid values are \"smooth\", \"phase\", \"blink\" and \"solid\".\n    \"caret_style\": \"smooth\",\n\n    // These settings control the size of the caret\n    \"caret_extra_top\": 0,\n    \"caret_extra_bottom\": 0,\n    \"caret_extra_width\": 0,\n\n    // Set to false to disable underlining the brackets surrounding the caret\n    \"match_brackets\": true,\n\n    // Set to false if you'd rather only highlight the brackets when the caret is\n    // next to one\n    \"match_brackets_content\": true,\n\n    // Set to false to not highlight square brackets. This only takes effect if\n    // match_brackets is true\n    \"match_brackets_square\": true,\n\n    // Set to false to not highlight curly brackets. This only takes effect if\n    // match_brackets is true\n    \"match_brackets_braces\": true,\n\n    // Set to false to not highlight angle brackets. This only takes effect if\n    // match_brackets is true\n    \"match_brackets_angle\": false,\n\n    // Enable visualization of the matching tag in HTML and XML\n    \"match_tags\": true,\n\n    // Highlights other occurrences of the currently selected text\n    \"match_selection\": true,\n\n    // Additional spacing at the top of each line, in pixels\n    \"line_padding_top\": 0,\n\n    // Additional spacing at the bottom of each line, in pixels\n    \"line_padding_bottom\": 0,\n\n    // Set to false to disable scrolling past the end of the buffer.\n    // On OS X, this value is overridden in the platform specific settings, so\n    // you'll need to place this line in your user settings to override it.\n    \"scroll_past_end\": true,\n\n    // This controls what happens when pressing up or down when on the first\n    // or last line.\n    // On OS X, this value is overridden in the platform specific settings, so\n    // you'll need to place this line in your user settings to override it.\n    \"move_to_limit_on_up_down\": false,\n\n    // Set to \"none\" to turn off drawing white space, \"selection\" to draw only the\n    // white space within the selection, and \"all\" to draw all white space\n    \"draw_white_space\": \"selection\",\n\n    // Set to false to turn off the indentation guides.\n    // The color and width of the indent guides may be customized by editing\n    // the corresponding .tmTheme file, and specifying the colors \"guide\",\n    // \"activeGuide\" and \"stackGuide\"\n    \"draw_indent_guides\": true,\n\n    // Controls how the indent guides are drawn, valid options are\n    // \"draw_normal\" and \"draw_active\". draw_active will draw the indent\n    // guides containing the caret in a different color.\n    \"indent_guide_options\": [\"draw_normal\"],\n\n    // Set to true to removing trailing white space on save\n    \"trim_trailing_white_space_on_save\": false,\n\n    // Set to true to ensure the last line of the file ends in a newline\n    // character when saving\n    \"ensure_newline_at_eof_on_save\": false,\n\n    // Set to true to automatically save files when switching to a different file\n    // or application\n    \"save_on_focus_lost\": false,\n\n    // Save via writing to an alternate file, and then renaming it over the\n    // original file.\n    \"atomic_save\": false,\n\n    // The encoding to use when the encoding can't be determined automatically.\n    // ASCII, UTF-8 and UTF-16 encodings will be automatically detected.\n    \"fallback_encoding\": \"Western (Windows 1252)\",\n\n    // Encoding used when saving new files, and files opened with an undefined\n    // encoding (e.g., plain ascii files). If a file is opened with a specific\n    // encoding (either detected or given explicitly), this setting will be\n    // ignored, and the file will be saved with the encoding it was opened\n    // with.\n    \"default_encoding\": \"UTF-8\",\n\n    // Files containing null bytes are opened as hexadecimal by default\n    \"enable_hexadecimal_encoding\": true,\n\n    // Determines what character(s) are used to terminate each line in new files.\n    // Valid values are 'system' (whatever the OS uses), 'windows' (CRLF) and\n    // 'unix' (LF only).\n    \"default_line_ending\": \"system\",\n\n    // When enabled, pressing tab will insert the best matching completion.\n    // When disabled, tab will only trigger snippets or insert a tab.\n    // Shift+tab can be used to insert an explicit tab when tab_completion is\n    // enabled.\n    \"tab_completion\": true,\n\n    // Enable auto complete to be triggered automatically when typing.\n    \"auto_complete\": true,\n\n    // The maximum file size where auto complete will be automatically triggered.\n    \"auto_complete_size_limit\": 4194304,\n\n    // The delay, in ms, before the auto complete window is shown after typing\n    \"auto_complete_delay\": 50,\n\n    // Controls what scopes auto complete will be triggered in\n    \"auto_complete_selector\": \"meta.tag - punctuation.definition.tag.begin, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc\",\n\n    // Additional situations to trigger auto complete\n    \"auto_complete_triggers\": [ {\"selector\": \"text.html\", \"characters\": \"<\"} ],\n\n    // By default, auto complete will commit the current completion on enter.\n    // This setting can be used to make it complete on tab instead.\n    // Completing on tab is generally a superior option, as it removes\n    // ambiguity between committing the completion and inserting a newline.\n    \"auto_complete_commit_on_tab\": false,\n\n    // Controls if auto complete is shown when snippet fields are active.\n    // Only relevant if auto_complete_commit_on_tab is true.\n    \"auto_complete_with_fields\": false,\n\n    // Controls what happens when pressing the up key while the first item in\n    // the auto complete window is selected: if false, the window is hidden,\n    // otherwise the last item in the window is selected. Likewise for the\n    // down key when the last item is selected.\n    \"auto_complete_cycle\": false,\n\n    // Automatically close HTML and XML tags when </ is entered.\n    \"auto_close_tags\": true,\n\n    // By default, shift+tab will only unindent if the selection spans\n    // multiple lines. When pressing shift+tab at other times, it'll insert a\n    // tab character - this allows tabs to be inserted when tab_completion is\n    // enabled. Set this to true to make shift+tab always unindent, instead of\n    // inserting tabs.\n    \"shift_tab_unindent\": false,\n\n    // If true, the copy and cut commands will operate on the current line\n    // when the selection is empty, rather than doing nothing.\n    \"copy_with_empty_selection\": true,\n\n    // If true, the selected text will be copied into the find panel when it's\n    // shown.\n    // On OS X, this value is overridden in the platform specific settings, so\n    // you'll need to place this line in your user settings to override it.\n    \"find_selected_text\": true,\n\n    // When auto_find_in_selection is enabled, the \"Find in Selection\" flag\n    // will be enabled automatically when multiple lines of text are selected\n    \"auto_find_in_selection\": false,\n\n    // When drag_text is enabled, clicking on selected text will begin a\n    // drag-drop operation. This is not currently implemented under Linux.\n    \"drag_text\": true,\n\n    //\n    // User Interface Settings\n    //\n\n    // The theme controls the look of Sublime Text's UI (buttons, tabs, scroll bars, etc)\n    \"theme\": \"Default.sublime-theme\",\n\n    // Set to 0 to disable smooth scrolling. Set to a value between 0 and 1 to\n    // scroll slower, or set to larger than 1 to scroll faster\n    \"scroll_speed\": 1.0,\n\n    // Controls side bar animation when expanding or collapsing folders\n    \"tree_animation_enabled\": true,\n\n    // Controls animation throughout the application\n    \"animation_enabled\": true,\n\n    // Makes tabs with modified files more visible\n    \"highlight_modified_tabs\": false,\n\n    \"show_tab_close_buttons\": true,\n\n    // Show folders in the side bar in bold\n    \"bold_folder_labels\": false,\n\n    // OS X only: Set to true to disable Lion style full screen support.\n    // Sublime Text must be restarted for this to take effect.\n    \"use_simple_full_screen\": false,\n\n    // OS X only. Valid values are true, false, and \"auto\". Auto will enable\n    // the setting when running on a screen 2560 pixels or wider (i.e., a\n    // Retina display). When this setting is enabled, OpenGL is used to\n    // accelerate drawing. Sublime Text must be restarted for changes to take\n    // effect.\n    \"gpu_window_buffer\": \"auto\",\n\n    // Valid values are \"system\", \"enabled\" and \"disabled\"\n    \"overlay_scroll_bars\": \"system\",\n\n    // Allows tabs to scroll left and right, instead of simply shrinking\n    \"enable_tab_scrolling\": true,\n\n    // Display file encoding in the status bar\n    \"show_encoding\": false,\n\n    // Display line endings in the status bar\n    \"show_line_endings\": false,\n\n    //\n    // Application Behavior Settings\n    //\n\n    // Exiting the application with hot_exit enabled will cause it to close\n    // immediately without prompting. Unsaved modifications and open files will\n    // be preserved and restored when next starting.\n    //\n    // Closing a window with an associated project will also close the window\n    // without prompting, preserving unsaved changes in the workspace file\n    // alongside the project.\n    \"hot_exit\": true,\n\n    // remember_full_screen will allow Sublime Text to start in full screen\n    // mode if it was exited in full screen mode. When set to false, Sublime\n    // Text will never start in full screen mode.\n    \"remember_full_screen\": false,\n\n    // Always prompt before reloading a file, even if the file hasn't been\n    // modified. The default behavior is to automatically reload a file if it\n    // hasn't been edited. If a file has unsaved changes, a prompt will always\n    // be shown.\n    \"always_prompt_for_file_reload\": false,\n\n    // OS X only: When files are opened from finder, or by dragging onto the\n    // dock icon, this controls if a new window is created or not.\n    \"open_files_in_new_window\": true,\n\n    // OS X only: This controls if an empty window is created at startup or not.\n    \"create_window_at_startup\": true,\n\n    // Set to true to close windows as soon as the last file is closed, unless\n    // there's a folder open within the window.\n    // On OS X, this value is overridden in the platform specific settings, so\n    // you'll need to place this line in your user settings to override it.\n    \"close_windows_when_empty\": false,\n\n    // Show the full path to files in the title bar.\n    // On OS X, this value is overridden in the platform specific settings, so\n    // you'll need to place this line in your user settings to override it.\n    \"show_full_path\": true,\n\n    // Shows the Build Results panel when building. If set to false, the Build\n    // Results can be shown via the Tools/Build Results menu.\n    \"show_panel_on_build\": true,\n\n    // Preview file contents when clicking on a file in the side bar. Double\n    // clicking or editing the preview will open the file and assign it a tab.\n    \"preview_on_click\": true,\n\n    // folder_exclude_patterns and file_exclude_patterns control which files\n    // are listed in folders on the side bar. These can also be set on a per-\n    // project basis.\n    \"folder_exclude_patterns\": [\".svn\", \".git\", \".hg\", \"CVS\"],\n    \"file_exclude_patterns\": [\"*.pyc\", \"*.pyo\", \"*.exe\", \"*.dll\", \"*.obj\",\"*.o\", \"*.a\", \"*.lib\", \"*.so\", \"*.dylib\", \"*.ncb\", \"*.sdf\", \"*.suo\", \"*.pdb\", \"*.idb\", \".DS_Store\", \"*.class\", \"*.psd\", \"*.db\", \"*.sublime-workspace\"],\n    // These files will still show up in the side bar, but won't be included in\n    // Goto Anything or Find in Files\n    \"binary_file_patterns\": [\"*.jpg\", \"*.jpeg\", \"*.png\", \"*.gif\", \"*.ttf\", \"*.tga\", \"*.dds\", \"*.ico\", \"*.eot\", \"*.pdf\", \"*.swf\", \"*.jar\", \"*.zip\"],\n\n    // File indexing parses all files in the side bar, and builds an index of\n    // their symbols. This is required for Goto Definition to work.\n    \"index_files\": true,\n\n    // Set the number threads to use for indexing. A value of 0 will make\n    // Sublime Text guess based on the number of cores. Use the index_files\n    // setting to disable all workers.\n    \"index_workers\": 0,\n\n    // index_exclude_patterns indicate which files won't be indexed.\n    \"index_exclude_patterns\": [\"*.log\"],\n\n    // List any packages to ignore here. When removing entries from this list,\n    // a restart may be required if the package contains plugins.\n    \"ignored_packages\": [\"Vintage\"]\n}\n",
+			"file": "/home/myxo/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 16426,
+				"line_ending": "Unix",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "geometry.h",
+			"settings":
+			{
+				"buffer_size": 158,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXing/LaTeX (TikZ).sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXing/LaTeX (TikZ).sublime-build",
+					"Clean up Files"
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX (TikZ).sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Clean up Files"
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Processing/Build Systems/Processing 3.sublime-build",
+					""
+				],
+				[
+					"Packages/Processing/Build Systems/Processing 3.sublime-build",
+					"Run sketch fullscreen"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing 3.sublime-build",
+					"Build & run sketch"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing 3.sublime-build",
+					"Build & run sketch fullscreen"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing 3.sublime-build",
+					"Export sketch as a 32-bit linux application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing 3.sublime-build",
+					"Export sketch as a 64-bit linux application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing 3.sublime-build",
+					"Export sketch as a macosx application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing 3.sublime-build",
+					"Export sketch as a 32-bit windows application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing 3.sublime-build",
+					"Export sketch as a 64-bit windows application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					""
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Run sketch fullscreen"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as a 32-bit linux application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as a 64-bit linux application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as a macosx application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as a 32-bit windows application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as a 64-bit windows application"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Processing (Windows).sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Processing/Build Systems/Processing 3.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					""
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Re-run sketch"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Run sketch (Processing 3 only)"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Run sketch fullscreen"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as application"
+				]
+			],
+			[
+				"Packages/Processing/Build Systems/Processing.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					""
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Re-run sketch"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Run sketch (Processing 3 only)"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Run sketch fullscreen"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Kill running sketches"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Processing/Build Systems/Processing.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					""
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Run sketch fullscreen"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as a 32-bit linux application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as a 64-bit linux application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as a macosx application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as a 32-bit windows application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as a 64-bit windows application"
+				]
+			],
+			[
+				"Packages/Processing/Build Systems/Processing.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Processing/Processing 3.sublime-build",
+					""
+				],
+				[
+					"Packages/Processing/Processing 3.sublime-build",
+					"Run sketch fullscreen"
+				],
+				[
+					"Packages/Processing/Processing 3.sublime-build",
+					"Build & run sketch"
+				],
+				[
+					"Packages/Processing/Processing 3.sublime-build",
+					"Build & run sketch fullscreen"
+				],
+				[
+					"Packages/Processing/Processing 3.sublime-build",
+					"Export sketch as a 32-bit linux application"
+				],
+				[
+					"Packages/Processing/Processing 3.sublime-build",
+					"Export sketch as a 64-bit linux application"
+				],
+				[
+					"Packages/Processing/Processing 3.sublime-build",
+					"Export sketch as a macosx application"
+				],
+				[
+					"Packages/Processing/Processing 3.sublime-build",
+					"Export sketch as a 32-bit windows application"
+				],
+				[
+					"Packages/Processing/Processing 3.sublime-build",
+					"Export sketch as a 64-bit windows application"
+				],
+				[
+					"Packages/Processing/Processing.sublime-build",
+					""
+				],
+				[
+					"Packages/Processing/Processing.sublime-build",
+					"Run sketch fullscreen"
+				],
+				[
+					"Packages/Processing/Processing.sublime-build",
+					"Export sketch as a 32-bit linux application"
+				],
+				[
+					"Packages/Processing/Processing.sublime-build",
+					"Export sketch as a 64-bit linux application"
+				],
+				[
+					"Packages/Processing/Processing.sublime-build",
+					"Export sketch as a macosx application"
+				],
+				[
+					"Packages/Processing/Processing.sublime-build",
+					"Export sketch as a 32-bit windows application"
+				],
+				[
+					"Packages/Processing/Processing.sublime-build",
+					"Export sketch as a 64-bit windows application"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Processing (Windows).sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Processing/Processing 3.sublime-build",
+				"Build & run sketch"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 223.0,
+		"last_filter": "renam",
+		"selected_items":
+		[
+			[
+				"renam",
+				"File: Rename"
+			],
+			[
+				"make",
+				"Set Syntax: Makefile Improved"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"snipp fig",
+				"Snippet: figure"
+			],
+			[
+				"Snippet: ",
+				"Snippet: figure"
+			],
+			[
+				"dele",
+				"ANF: Delete Current File"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"matla",
+				"Set Syntax: MATLAB"
+			],
+			[
+				"rename",
+				"File: Rename"
+			],
+			[
+				"add",
+				"Project: Add Folder"
+			],
+			[
+				"rena",
+				"ANF: Rename File"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"clang f",
+				"Clang Format: Select Style"
+			],
+			[
+				"clan",
+				"Clang Format: Select Style"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"minim",
+				"View: Toggle Minimap"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"set mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"markdo",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"late",
+				"LaTeXTools: Jump to PDF"
+			],
+			[
+				"buil",
+				"LaTeXTools: Build cache for LaTeX packages"
+			],
+			[
+				"latex",
+				"Set Syntax: LaTeX"
+			],
+			[
+				"minima",
+				"View: Toggle Minimap"
+			],
+			[
+				"set pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"c",
+				"Set Syntax: C++"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"pytho",
+				"Set Syntax: Python"
+			],
+			[
+				"use",
+				"Preferences: Settings - User"
+			],
+			[
+				"markdow",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"mark ",
+				"Set Syntax: Markdown"
+			],
+			[
+				"mark",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"ipy",
+				"Open IPython Notebook"
+			],
+			[
+				"ipyth",
+				"Open IPython Notebook"
+			],
+			[
+				"user ",
+				"Preferences: Settings - User"
+			],
+			[
+				"run pro",
+				"Build With: Processing - Run sketch (Processing 3 only)"
+			],
+			[
+				"syn pro",
+				"Set Syntax: Processing"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"togg",
+				"View: Toggle Minimap"
+			],
+			[
+				"pac",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"syntax pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"rep",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"repl pyth",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"repl py",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"snipp",
+				"Snippet: vertex 3D"
+			],
+			[
+				"save as",
+				"Project: Save As"
+			],
+			[
+				"packa",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"ins	",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 521.0
+	},
+	"console":
+	{
+		"height": 300.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"PackageResourceViewer",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": false,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/myxo/ssyp/2016/test_render",
+		"/home/myxo/ssyp/2016/test_render/obj"
+	],
+	"file_history":
+	[
+		"/home/myxo/ssyp/2016/test_render/lodepng.h",
+		"/home/myxo/ssyp/2016/test_render/main.cpp",
+		"/home/myxo/ssyp/2016/test_render/Makefile",
+		"/home/myxo/ssyp/2016/test_render/lodepng.c",
+		"/home/myxo/Dropbox/homeFolder/mag/abbreviation.tex",
+		"/home/myxo/Dropbox/homeFolder/bachelor/thesis/appendix.tex",
+		"/home/myxo/Dropbox/homeFolder/bachelor/thesis/conclusion.tex",
+		"/home/myxo/Dropbox/homeFolder/bachelor/thesis/experiment.tex",
+		"/home/myxo/mag/main.bbl",
+		"/home/myxo/mag/plan",
+		"/home/myxo/mag/mag_thesis.sublime-project",
+		"/home/myxo/mag/abbreviation.tex",
+		"/home/myxo/mag/title_draft.tex",
+		"/home/myxo/mag/title.tex",
+		"/home/myxo/mag/classic_neuron_picture.tex",
+		"/home/myxo/mag/conclusion.tex",
+		"/home/myxo/mag/experiment.tex",
+		"/home/myxo/Dropbox/homeFolder/bachelor/thesis/classification.tex",
+		"/home/myxo/mag/main.tex",
+		"/home/myxo/.config/sublime-text-3/Packages/User/latex_figure.sublime-snippet",
+		"/home/myxo/.config/sublime-text-3/Packages/User/LaTeXTools.sublime-settings",
+		"/home/myxo/mag/intro.tex",
+		"/home/myxo/mag/mag.bib",
+		"/home/myxo/.config/sublime-text-3/Packages/LaTeXTools/LaTeXTools.sublime-settings",
+		"/home/myxo/univer/computerVision/homography_lines.py",
+		"/home/myxo/univer/computerVision/homography_lines.m",
+		"/home/myxo/univer/computerVision/homography_estimation.m",
+		"/home/myxo/univer/computerVision/triangulation_real.py",
+		"/home/myxo/ssyp/of/shooter/src/ofApp.h",
+		"/home/myxo/ssyp/of/shooter/src/todo_list",
+		"/home/myxo/ssyp/of/shooter/src/world.h",
+		"/home/myxo/ssyp/of/shooter/src/bullet.h",
+		"/home/myxo/ssyp/of/shooter/src/world.cpp",
+		"/home/myxo/ssyp/of/shooter/src/boxContactListener.h",
+		"/home/myxo/ssyp/of/shooter/src/ofApp.cpp",
+		"/home/myxo/ssyp/of/shooter/src/bullet_interface.h",
+		"/home/myxo/ssyp/of/shooter/src/worldEntity.h",
+		"/home/myxo/Dropbox/habr_list",
+		"/home/myxo/.config/sublime-text-3/Packages/User/C++YouCompleteMe.sublime-settings",
+		"/home/myxo/.config/sublime-text-3/Packages/C++YouCompleteMe/Default (Linux).sublime-keymap",
+		"/home/myxo/ssyp/of/shooter/.ycm_extra_conf.py",
+		"/home/myxo/.config/sublime-text-3/Packages/C++YouCompleteMe/C++YouCompleteMe.sublime-settings",
+		"/home/myxo/ssyp/of/shooter/src/.ycm_extra_conf.py",
+		"/home/myxo/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/myxo/.config/sublime-text-3/Packages/User/JSON.sublime-settings",
+		"/home/myxo/.config/sublime-text-3/Packages/Clang Format/clang_format.sublime-settings",
+		"/home/myxo/ssyp/processing/processing_test/shooter/world.pde",
+		"/home/myxo/build/luakit/luakit.c",
+		"/home/myxo/build/luakit/luah.c",
+		"/home/myxo/build/luakit/Makefile",
+		"/home/myxo/Dropbox/ssyp/2016/plan.todo",
+		"/home/myxo/build/nupic.vision/DataSets/OCR/characters/cmr_all.xml",
+		"/home/myxo/build/nupic.vision/DataSets/OCR/characters/cmr_hex.xml",
+		"/home/myxo/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/myxo/habr.md",
+		"/home/myxo/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/myxo/univer/cloud/task3/task3.py",
+		"/home/myxo/.cache/.fr-Ikfl0S/Абэ Кобо. Совсем как человек - royallib.ru.txt",
+		"/home/myxo/univer/cloud/engine/httpServer.py",
+		"/home/myxo/univer/cloud/task3/task_configuration",
+		"/home/myxo/univer/cloud/engine/engine_config",
+		"/home/myxo/univer/cloud/report.md",
+		"/home/myxo/univer/cloud/client/client.py",
+		"/home/myxo/univer/cloud/task1/task1.py",
+		"/home/myxo/univer/cloud/master/engineControl.py",
+		"/home/myxo/univer/cloud/master/master.py",
+		"/home/myxo/Dropbox/homeFolder/some_latex_works/statistic_homework/3_2/summary_3_2.tex",
+		"/home/myxo/Dropbox/homeFolder/memcomputing_habr.tex",
+		"/home/myxo/Dropbox/WWW/q.txt",
+		"/home/myxo/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
+		"/home/myxo/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/home/myxo/univer/cloud/master/taskpool_config",
+		"/home/myxo/.config/sublime-text-3/Packages/AdvancedNewFile/AdvancedNewFile.sublime-settings",
+		"/home/myxo/.config/sublime-text-3/Packages/User/AdvancedNewFile.sublime-settings",
+		"/home/myxo/univer/cloud/master/utils.py",
+		"/home/myxo/univer/cloud/master/task.py",
+		"/home/myxo/univer/cloud/engine/upload_result.py",
+		"/home/myxo/univer/cloud/engine/engine_script.sh",
+		"/home/myxo/univer/cloud/master/taskpool.py",
+		"/home/myxo/univer/cloud/engine/check_is_done.py",
+		"/home/myxo/.config/awesome/rc/bindings.lua",
+		"/home/myxo/univer/cloud/test.html",
+		"/home/myxo/univer/cloud/phones.json",
+		"/home/myxo/univer/cloud/README.md",
+		"/home/myxo/univer/cloud/project_info.mkd",
+		"/home/myxo/.config/awesome/rc/rules.lua",
+		"/home/myxo/Dropbox/project_info.mkd",
+		"/home/myxo/Dropbox/homeFolder/os_phil.md",
+		"/home/myxo/univer/cloud/master/engineinfo.py",
+		"/home/myxo/univer/cloud/master/engine_listener.py",
+		"/home/myxo/univer/cloud/master/clientHTTPlistener.py",
+		"/home/myxo/.config/sublime-text-3/Packages/Terminal/Terminal.sublime-settings",
+		"/home/myxo/.config/sublime-text-3/Packages/User/Terminal.sublime-settings",
+		"/home/myxo/tmp/server_test/server.py",
+		"/home/myxo/.config/awesome/rc.lua",
+		"/home/myxo/.config/awesome/rc/quake.lua",
+		"/usr/share/awesome/lib/awful/key.lua",
+		"/home/myxo/.config/awesome/lib/quake.lua",
+		"/home/myxo/.config/awesome/rc/start.lua",
+		"/home/myxo/.config/awesome/rc/widgets.lua",
+		"/home/myxo/tmp/aiCup15/python2-cgdk/model/Move.py",
+		"/home/myxo/tmp/aiCup15/python2-cgdk/MyStrategy.py",
+		"/home/myxo/tmp/aiCup15/python2-cgdk/model/RectangularUnit.py",
+		"/home/myxo/tmp/aiCup15/python2-cgdk/model/Unit.py",
+		"/home/myxo/tmp/aiCup15/python2-cgdk/Runner.py",
+		"/home/myxo/tmp/aiCup15/run.sh",
+		"/home/myxo/univer/cloud/master/client_listener.py",
+		"/home/myxo/.config/sublime-text-3/Packages/Anaconda/README.md",
+		"/home/myxo/Dropbox/Sublime/User/Python.sublime-setting",
+		"/home/myxo/univer/cloud/task2/run.sh",
+		"/home/myxo/univer/cloud/task3/run.sh",
+		"/home/myxo/univer/cloud/taskpool_config",
+		"/home/myxo/univer/cloud/check_is_done.py",
+		"/home/myxo/univer/cloud/engine_listener.py",
+		"/home/myxo/univer/cloud/client.py",
+		"/home/myxo/univer/cloud/taskpool.py",
+		"/home/myxo/univer/cloud/engineinfo.py",
+		"/home/myxo/univer/cloud/client_listener.py",
+		"/home/myxo/univer/cloud/master.py",
+		"/home/myxo/univer/cloud/sync_with_engine.sh",
+		"/home/myxo/univer/cloud/engine_script.sh",
+		"/home/myxo/univer/cloud/task2/task2.py",
+		"/home/myxo/univer/cloud/password-file",
+		"/home/myxo/univer/cloud/utils.py",
+		"/home/myxo/univer/cloud/task.py",
+		"/home/myxo/univer/cloud/engine_script.py",
+		"/home/myxo/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/myxo/univer/cloud/worker@myxovm1.cloudapp.net"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"Player ",
+			"<project>",
+			"/home/myxo/univer/cloud",
+			"/home/myxo/.config/awesome/rc",
+			"",
+			"Default",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"file_pa",
+			"    \n",
+			"std",
+			"lodepng",
+			"\n\\",
+			"ex1",
+			"g_encoder1",
+			"h",
+			"textbf",
+			"Иначе",
+			"то",
+			"Если",
+			"⇒",
+			"p2",
+			"p1",
+			"p2",
+			"p1",
+			"X2p",
+			"X1p",
+			";\n",
+			"void",
+			"bodyDef",
+			"b2BodyDef",
+			"Mob",
+			"speed",
+			"game_world",
+			"world",
+			"World",
+			"player",
+			"player ",
+			"speed_dir",
+			"set",
+			"case",
+			" {",
+			"N_BUTTON_PRESS",
+			"255",
+			"img",
+			"res",
+			"img",
+			"sobel",
+			"e",
+			"192.168.0.108",
+			"0",
+			"local",
+			"127",
+			"localhost",
+			"task_waiting",
+			"taskWaiting",
+			"ts",
+			"ta",
+			"st",
+			"check",
+			"срусл",
+			"connection",
+			"engine_id",
+			"form",
+			"self.path",
+			"self",
+			"request_content",
+			"conf_str",
+			"green",
+			"elistener",
+			"conf_data",
+			"tp",
+			"task_name",
+			"self",
+			"cpu",
+			"self",
+			"focus",
+			"slope",
+			"calen",
+			"mytext",
+			"rules",
+			"project",
+			"send_task('/home/myxo/project/task1')\ntime.sleep(2)",
+			"adress",
+			"sock",
+			"task_quere",
+			"tasks",
+			"N",
+			"a",
+			"usr",
+			"= ",
+			" =",
+			"= ",
+			"/usr/share/awesome/themes/default/",
+			"wibox",
+			"widget",
+			"restar",
+			"title",
+			"i",
+			"a",
+			"i",
+			"float",
+			"i",
+			"g",
+			"neuron_list",
+			"Приезд",
+			"паста",
+			".\n",
+			"5шт",
+			"\n - Игра: Змейка\n - Particle system. Задание на разбор и модификацию чужого кода.\n - Лекция: Асимптотическая сложность алгоритмов",
+			"- ",
+			"функций",
+			")",
+			"☐",
+			"recorder",
+			"теннис",
+			"Змейка",
+			"Windows",
+			"world",
+			"hello",
+			"event",
+			"функции",
+			"игра",
+			"☐",
+			"\"\n",
+			"birds",
+			"условия",
+			"countour",
+			"coun",
+			"radius",
+			"distt",
+			"b",
+			"contour.length",
+			"contour_.length",
+			"w_object",
+			"countour"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			" день.",
+			"contour",
+			"PVector",
+			"block_size",
+			"float"
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "model.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 173,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								165,
+								165
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"_anf_new": "",
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "model.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 284,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								276,
+								276
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"_anf_new": "",
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/myxo/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15478,
+								15478
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 7319.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "geometry.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 158,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								81,
+								81
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"_anf_new": "",
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.CppYCM.2":
+	{
+		"height": 0.0
+	},
+	"output.CppYCM.3":
+	{
+		"height": 130.0
+	},
+	"output.CppYCM.4":
+	{
+		"height": 130.0
+	},
+	"output.CppYCM.5":
+	{
+		"height": 0.0
+	},
+	"output.clangcomplete":
+	{
+		"height": 112.0
+	},
+	"output.exec":
+	{
+		"height": 150.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 171.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 124.0
+	},
+	"pinned_build_system": "",
+	"project": "render.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"lo",
+				"lodepng.h"
+			],
+			[
+				"mai",
+				"main.cpp"
+			],
+			[
+				"abb",
+				"abbreviation.tex"
+			],
+			[
+				"tit",
+				"title.tex"
+			],
+			[
+				"co",
+				"conclusion.tex"
+			],
+			[
+				"main",
+				"main.bbl"
+			],
+			[
+				"pla",
+				"plan"
+			],
+			[
+				"proj",
+				"mag_thesis.sublime-project"
+			],
+			[
+				"pi",
+				"pistole.cpp"
+			],
+			[
+				"worl",
+				"world.cpp"
+			],
+			[
+				"bull",
+				"bullet.h"
+			],
+			[
+				"mob",
+				"mob.h"
+			],
+			[
+				"of",
+				"ofApp.h"
+			],
+			[
+				"bul",
+				"bullet.h"
+			],
+			[
+				"wor",
+				"world.cpp"
+			],
+			[
+				"bu",
+				"bullet.h"
+			],
+			[
+				"wo",
+				"worldEntity.h"
+			],
+			[
+				"mak",
+				"Makefile"
+			],
+			[
+				"luaki",
+				"luakit.c"
+			],
+			[
+				"sif",
+				"sift.py"
+			],
+			[
+				"cla",
+				"classifiers.py"
+			],
+			[
+				"cmr_a",
+				"DataSets/OCR/characters/cmr_all.xml"
+			],
+			[
+				"cmr_he",
+				"DataSets/OCR/characters/cmr_hex.xml"
+			],
+			[
+				"visi",
+				"vision_testbench.py"
+			],
+			[
+				"demo",
+				"demo.py"
+			],
+			[
+				"cli",
+				"client/client.py"
+			],
+			[
+				"task",
+				"master/task.py"
+			],
+			[
+				"con",
+				"master/taskpool_config"
+			],
+			[
+				"clie",
+				"client/client.py"
+			],
+			[
+				"engien",
+				"master/engineControl.py"
+			],
+			[
+				"https",
+				"engine/httpServer.py"
+			],
+			[
+				"clien",
+				"client/client.py"
+			],
+			[
+				"tas",
+				"master/taskpool_config"
+			],
+			[
+				"engi",
+				"engine/engine_config"
+			],
+			[
+				"eng",
+				"master/engineControl.py"
+			],
+			[
+				"master",
+				"master/master.py"
+			],
+			[
+				"engine",
+				"engine/engine_config"
+			],
+			[
+				"conf",
+				"master/taskpool_config"
+			],
+			[
+				"stat",
+				"master/status.html"
+			],
+			[
+				"maste",
+				"master/master.py"
+			],
+			[
+				"htt",
+				"master/HTTPlistener.py"
+			],
+			[
+				"ta",
+				"master/task.py"
+			],
+			[
+				"repo",
+				"report.md"
+			],
+			[
+				"termtex",
+				"term_report2.tex"
+			],
+			[
+				"http",
+				"engine/httpServer.py"
+			],
+			[
+				"uti",
+				"master/utils.py"
+			],
+			[
+				"cle",
+				"client/client.py"
+			],
+			[
+				"che",
+				"engine/check_is_done.py"
+			],
+			[
+				"htm",
+				"master/status.html"
+			],
+			[
+				"uplo",
+				"engine/upload_result.py"
+			],
+			[
+				"task.",
+				"master/task.py"
+			],
+			[
+				"mas",
+				"master/master.py"
+			],
+			[
+				"taskpo",
+				"master/taskpool.py"
+			],
+			[
+				"upl",
+				"engine/upload_result.py"
+			],
+			[
+				"mast",
+				"master/master.py"
+			],
+			[
+				"o",
+				"os_phil.md"
+			],
+			[
+				"en",
+				"master/engineinfo.py"
+			],
+			[
+				"cl",
+				"client/client.py"
+			],
+			[
+				"rc",
+				"rc.lua"
+			],
+			[
+				"qu",
+				"lib/quake.lua"
+			],
+			[
+				"move",
+				"model/Move.py"
+			],
+			[
+				"uni",
+				"model/Unit.py"
+			],
+			[
+				"rec",
+				"model/RectangularUnit.py"
+			],
+			[
+				"runn",
+				"Runner.py"
+			],
+			[
+				"rul",
+				"rc/rules.lua"
+			],
+			[
+				"ut",
+				"master/utils.py"
+			],
+			[
+				"taskp",
+				"master/taskpool.py"
+			],
+			[
+				"check",
+				"engine/check_is_done.py"
+			],
+			[
+				"tasl",
+				"master/taskpool_config"
+			],
+			[
+				"syn",
+				"sync_with_engine.sh"
+			],
+			[
+				"task3",
+				"task3/task3.py"
+			],
+			[
+				"sy",
+				"sync_with_engine.sh"
+			],
+			[
+				"",
+				"neuronNetwork.py"
+			],
+			[
+				"krop",
+				"krop.cpp"
+			],
+			[
+				"pro",
+				"project.pde"
+			],
+			[
+				"psur",
+				"core/src/processing/core/PSurface.java"
+			],
+			[
+				"pvec",
+				"core/src/processing/core/PVector.java"
+			],
+			[
+				"pgra",
+				"core/src/processing/core/PGraphics.java"
+			],
+			[
+				"papp",
+				"core/src/processing/core/PApplet.java"
+			],
+			[
+				"wa",
+				"wall.pde"
+			],
+			[
+				"bui",
+				"building.pde"
+			],
+			[
+				"wall",
+				"wall.pde"
+			],
+			[
+				"spri",
+				"sprite.pde"
+			],
+			[
+				"pl",
+				"player.pde"
+			],
+			[
+				"sh",
+				"shotgunBullet.pde"
+			],
+			[
+				"play",
+				"player.pde"
+			],
+			[
+				"enu",
+				"enums.java"
+			],
+			[
+				"world",
+				"world.pde"
+			],
+			[
+				"player",
+				"player.pde"
+			],
+			[
+				"sho",
+				"shotgunBullet.pde"
+			],
+			[
+				"mo",
+				"Mob.pde"
+			],
+			[
+				"blo",
+				"ligth/block.pde"
+			],
+			[
+				"kr_e",
+				"kr_exe.cpp"
+			],
+			[
+				"3",
+				"3/3.hs"
+			],
+			[
+				"1_1",
+				"1_1/summary_1_1.tex"
+			],
+			[
+				"run",
+				"RuniRAPMusic.m"
+			],
+			[
+				"par",
+				"codegen/parse_file.c"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 239.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
