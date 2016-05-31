@@ -58,6 +58,10 @@ vec2i barycentric_to_world2i(vec2i *pts, vec3D bar){
     return result;
 }
 
+float barycentric_to_float(float *intensity, vec3D bar){
+    return intensity[0] * bar.x + intensity[1] * bar.y + intensity[2] * bar.z;
+}
+
 vec3D barycentric(vec3i *pts, vec2i P) {
     vec3D a = {pts[2].x - pts[0].x, pts[1].x - pts[0].x, pts[0].x - P.x};
     vec3D b = {pts[2].y - pts[0].y, pts[1].y - pts[0].y, pts[0].y - P.y};
@@ -74,9 +78,7 @@ vec3D barycentric(vec3i *pts, vec2i P) {
 }
 
 void triangle(model *m, vec3i t0, vec3i t1, vec3i t2, vec2i uv0, vec2i uv1, vec2i uv2, 
-        TGAImage &image, TGAColor color, float intensity, int *zbuffer){
-    if (t0.y==t1.y && t0.y==t2.y) return; 
-    // sort the vertices, t0, t1, t2 lower-to-upper (bubblesort yay!)
+        TGAImage &image, float *intensity_array, int *zbuffer){
 
     vec3i bboxmin, bboxmax;
     vec3i pts[3] = {t0, t1, t2};
@@ -96,7 +98,10 @@ void triangle(model *m, vec3i t0, vec3i t1, vec3i t2, vec2i uv0, vec2i uv1, vec2
 
             zbuffer[P.x+P.y*image.get_width()] = frag_depth;
 
-            TGAColor color_diffuse = model_diffuse(m, uvP);
+            float intensity = barycentric_to_float(intensity_array, bc_screen);
+            if (intensity < 0) continue;
+
+            TGAColor color_diffuse = model_diffuse(m, uvP) * intensity;
             image.set(P.x, P.y, color_diffuse);
         }
     }
@@ -106,7 +111,7 @@ void triangle(model *m, vec3i t0, vec3i t1, vec3i t2, vec2i uv0, vec2i uv1, vec2
 
 int main(int argc, char** argv){
     model m;
-    vec3D light_dir = {0, 0, -1};
+    vec3D light_dir = {1, -1, 1};
 
     if (2 == argc) {
         model_load(&m, argv[1]);
@@ -125,6 +130,7 @@ int main(int argc, char** argv){
     for (int i = 0; i < m.fn; i++){
         vec3i screen_coords[3];
         vec3D world_coords[3];
+        vec3D norm[3];
         for (int j = 0; j < 3; j++){
             vec3D v1 = m.verts[m.faces[i][0][j]];
             screen_coords[j].x = (v1.x + 1.0) * width/2.0;
@@ -132,20 +138,24 @@ int main(int argc, char** argv){
             screen_coords[j].z = (v1.z + 1.0) * depth/2.0;
 
             world_coords[j] = v1;
+
+            norm[j] = m.norms[m.faces[i][0][j]];
         }
 
-        vec3D n = v_vector_product(v_sub(world_coords[2], world_coords[0]), 
-                v_sub(world_coords[1], world_coords[0]));
+        // vec3D n = v_vector_product(v_sub(world_coords[2], world_coords[0]), 
+                // v_sub(world_coords[1], world_coords[0]));
 
-        n = v_normilize(n);
-        float intensity = v_scalar_product(n, light_dir);
+        // n = v_normilize(n);
+        float intensity[3] = {0};
+        for (int j = 0; j < 3; j++){
+            intensity[j] = v_scalar_product(norm[j], light_dir);
+        }
         if (intensity>0) {
             vec2i uv[3];
             for (int k = 0; k < 3; k++){
                 uv[k] = model_uv(&m, i, k);
             }
-            intensity *= 0.7;
-            triangle(&m, screen_coords[0], screen_coords[1], screen_coords[2], uv[0], uv[1], uv[2], image, TGAColor(intensity*255, intensity*255, intensity*255, 255), intensity, zbuffer);
+            triangle(&m, screen_coords[0], screen_coords[1], screen_coords[2], uv[0], uv[1], uv[2], image, intensity, zbuffer);
         }
     }
 
