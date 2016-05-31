@@ -51,6 +51,13 @@ void find_triangle_bounding_box(vec3i *pts, vec3i *bboxmin, vec3i *bboxmax, int 
     }
 }
 
+vec2i barycentric_to_world2i(vec2i *pts, vec3D bar){
+    vec2i result;
+    result.x = pts[0].x * bar.x + pts[1].x * bar.y + pts[2].x * bar.z;
+    result.y = pts[0].y * bar.x + pts[1].y * bar.y + pts[2].y * bar.z;
+    return result;
+}
+
 vec3D barycentric(vec3i *pts, vec2i P) {
     vec3D a = {pts[2].x - pts[0].x, pts[1].x - pts[0].x, pts[0].x - P.x};
     vec3D b = {pts[2].y - pts[0].y, pts[1].y - pts[0].y, pts[0].y - P.y};
@@ -80,69 +87,20 @@ void triangle(model *m, vec3i t0, vec3i t1, vec3i t2, vec2i uv0, vec2i uv1, vec2
         for (P.y = bboxmin.y; P.y <= bboxmax.y; P.y++) {
             vec3D bc_screen  = barycentric(pts, P);
 
+            vec2i uv_pts[3] = {uv0, uv1, uv2};
+            vec2i uvP = barycentric_to_world2i(uv_pts, bc_screen);
             float frag_depth = bc_screen.x*pts[0].z + bc_screen.y*pts[1].z + bc_screen.z*pts[2].z;
 
-            if (bc_screen.x < 0 || bc_screen.y < 0 || bc_screen.z < 0 || zbuffer[P.x+P.y*image.get_width()]>frag_depth) continue;
+            if (bc_screen.x < 0 || bc_screen.y < 0 || bc_screen.z < 0 
+                    || zbuffer[P.x + P.y*image.get_width()] > frag_depth) continue;
+
             zbuffer[P.x+P.y*image.get_width()] = frag_depth;
-            image.set(P.x, P.y, color);
+
+            TGAColor color_diffuse = model_diffuse(m, uvP);
+            image.set(P.x, P.y, color_diffuse);
         }
     }
 }
-
-
-// // лучше разобраться, что здесь происходит
-// void triangle_old(model *m, vec3i t0, vec3i t1, vec3i t2, vec2i uv0, vec2i uv1, vec2i uv2, 
-//         TGAImage &image, TGAColor color, float intensity, int *zbuffer) {
-
-//     if (t0.y==t1.y && t0.y==t2.y) return; 
-//     // sort the vertices, t0, t1, t2 lower-to-upper (bubblesort yay!)
-//     if (t0.y>t1.y) { std::swap(t0, t1); std::swap(uv0, uv1); }
-//     if (t0.y>t2.y) { std::swap(t0, t2); std::swap(uv0, uv2); }
-//     if (t1.y>t2.y) { std::swap(t1, t2); std::swap(uv1, uv2); }
-//     int total_height = t2.y-t0.y;
-
-//     for (int i=0; i<total_height; i++) {
-//         bool second_half = i>t1.y-t0.y || t1.y==t0.y;
-//         int segment_height = second_half ? t2.y-t1.y : t1.y-t0.y;
-//         float alpha = (float)i/total_height;
-//         float beta  = (float)(i-(second_half ? t1.y-t0.y : 0))/segment_height;
-        
-//         vec3i A =     vi_sum(t0, vi_scalar_multiply(vi_sub(t2,t0), alpha));
-//         vec3i B = second_half 
-//                     ? vi_sum(t1, vi_scalar_multiply(vi_sub(t2,t1), beta))
-//                     : vi_sum(t0, vi_scalar_multiply(vi_sub(t1,t0), beta));
-        
-//         vec2i uvA = {uv0.x + (int)(uv2.x-uv0.x)*alpha, uv0.y + (int)(uv2.y-uv0.y)*alpha};
-//         vec2i uvB;
-//         // uvB.x = second_half ? uv1.x + (uv2.x-uv1.x)*beta : uv0.x + (uv1.x-uv0.x)*beta;
-//         // uvB.x = second_half ? uv1.y + (uv2.y-uv1.y)*beta : uv0.y + (uv1.y-uv0.y)*beta;
-        
-//         if (A.x > B.x) { std::swap(A, B); std::swap(uvA, uvB); }
-
-//         for (int j=A.x; j<=B.x; j++) {
-//             float phi = B.x==A.x ? 1. : (float)(j-A.x)/(float)(B.x-A.x);
-//             // vec3i P = vi_sum(A, vi_scalar_multiply(vi_sub(B,A), phi));
-//             // check this place. Differents with source
-
-//             int z = (int)((float)A.z + float(B.z - A.z)*phi + 0.5);
-
-//             // vec2i uvP = { uvA.x + (uvB.x-uvA.x)*phi, uvA.y + (uvB.y-uvA.y)*phi};
-
-//             int idx = j + (t0.y + i)*width;
-//             if (zbuffer[idx] < z) {
-//                 zbuffer[idx] = z;
-//                 // image.set(P.x, P.y, color);
-//                 TGAColor c = model_diffuse(m, uvP);
-//                 c.r *= intensity;
-//                 c.g *= intensity; 
-//                 c.b *= intensity;
-//                 // image.set(j, t0.y + i, c);
-//                 image.set(j, t0.y + i, color);
-//             }
-//         }
-//     }
-// }
-
 
 
 
@@ -155,12 +113,11 @@ int main(int argc, char** argv){
     } else {
         // model_load(&m, "obj/test.obj");
         model_load(&m, "obj/african_head.obj");
+        // model_load(&m, "obj/Crate1.obj");
     }
 
     int *zbuffer = new int[width*height];
-    for (int i=0; i<width*height; i++) {
-        zbuffer[i] = std::numeric_limits<int>::min();
-    }
+    for (int i=0; i<width*height; zbuffer[i++] = std::numeric_limits<int>::min());
 
 
     TGAImage image(width, height, TGAImage::RGB);
@@ -187,6 +144,7 @@ int main(int argc, char** argv){
             for (int k = 0; k < 3; k++){
                 uv[k] = model_uv(&m, i, k);
             }
+            intensity *= 0.7;
             triangle(&m, screen_coords[0], screen_coords[1], screen_coords[2], uv[0], uv[1], uv[2], image, TGAColor(intensity*255, intensity*255, intensity*255, 255), intensity, zbuffer);
         }
     }

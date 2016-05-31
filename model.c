@@ -26,21 +26,21 @@ void model_add_face(model *m, char line[256]){
     i2 = atoi(strtok(NULL, "/"));
     i3 = atoi(strtok(NULL, "/"));
     m->faces[(m->fn)][0][0] = i1-1;
-    m->faces[(m->fn)][1][0] = i2;
+    m->faces[(m->fn)][1][0] = i2-1;
     m->faces[(m->fn)][2][0] = i3;
 
     i1 = atoi(strtok(s2, "/"));
     i2 = atoi(strtok(NULL, "/"));
     i3 = atoi(strtok(NULL, "/"));
     m->faces[(m->fn)][0][1] = i1-1;
-    m->faces[(m->fn)][1][1] = i2;
+    m->faces[(m->fn)][1][1] = i2-1;
     m->faces[(m->fn)][2][1] = i3;
 
     i1 = atoi(strtok(s3, "/"));
     i2 = atoi(strtok(NULL, "/"));
     i3 = atoi(strtok(NULL, "/"));
     m->faces[(m->fn)][0][2] = i1-1;
-    m->faces[(m->fn)][1][2] = i2;
+    m->faces[(m->fn)][1][2] = i2-1;
     m->faces[(m->fn++)][2][2] = i3;
 }
 
@@ -63,6 +63,9 @@ void model_load_texture(char *filename, const char *suffix, TGAImage &img) {
     size_t dot = texfile.find_last_of(".");
     if (dot!=std::string::npos) {
         texfile = texfile.substr(0,dot) + std::string(suffix);
+        if (!img.read_tga_file(texfile.c_str())){
+            printf("ERROR in texture loading\n");
+        }
         // std::cerr << "texture file " << texfile << " loading " << (img.read_tga_file(texfile.c_str()) ? "ok" : "failed") << std::endl;
         img.flip_vertically();
     }
@@ -74,7 +77,7 @@ TGAColor model_diffuse(model *m, vec2i uv) {
 
 vec2i model_uv(model *m, int iface, int nvert) {
     int idx = m->faces[iface][1][nvert];
-    vec2i result = {(int)m->uv[idx].x*m->diffusemap.get_width(), (int)m->uv[idx].y*m->diffusemap.get_height()};
+    vec2i result = {(int)(m->uv[idx].x*m->diffusemap.get_width()), (int)(m->uv[idx].y*m->diffusemap.get_height())};
     return result;
 }
 
