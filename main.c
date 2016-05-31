@@ -131,7 +131,7 @@ int main(int argc, char** argv){
             for (int k = 0; k < 3; k++){
                 uv[k] = model_uv(&m, i, k);
             }
-            triangle(&m, screen_coords[0], screen_coords[1], screen_coords[2], uv[0], uv[1], uv[2], image, TGAColor(intensity*255, intensity*255, intensity*255, 255), intensity, zbuffer);
+            triangle_old(&m, screen_coords[0], screen_coords[1], screen_coords[2], uv[0], uv[1], uv[2], image, TGAColor(intensity*255, intensity*255, intensity*255, 255), intensity, zbuffer);
         }
     }
 
