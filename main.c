@@ -1,6 +1,7 @@
 #include "model.h"
 #include "tgaimage.h"
 #include "geometry.h"
+#include "matrix.h"
 
 #include <stdio.h>
 #include <limits>
@@ -142,10 +143,6 @@ int main(int argc, char** argv){
             norm[j] = m.norms[m.faces[i][0][j]];
         }
 
-        // vec3D n = v_vector_product(v_sub(world_coords[2], world_coords[0]), 
-                // v_sub(world_coords[1], world_coords[0]));
-
-        // n = v_normilize(n);
         float intensity[3] = {0};
         for (int j = 0; j < 3; j++){
             intensity[j] = v_scalar_product(norm[j], light_dir);
@@ -158,6 +155,24 @@ int main(int argc, char** argv){
             triangle(&m, screen_coords[0], screen_coords[1], screen_coords[2], uv[0], uv[1], uv[2], image, intensity, zbuffer);
         }
     }
+
+    float a[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    float b[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    matrix A, B, C;
+    matrix_initialize(&A, 3, 3);
+    matrix_initialize(&B, 3, 3);
+    matrix_set(&A, a, 9);
+    matrix_set(&B, b, 9);
+
+    matrix_product(&A, &B, &C);
+
+    matrix_print(&A);
+    matrix_print(&B);
+    matrix_print(&C);
+
+    matrix_delete(&A);
+    matrix_delete(&B);
+    matrix_delete(&C);
 
 
     // model_print(&m);
