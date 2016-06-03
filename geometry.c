@@ -48,3 +48,8 @@ vec3i vi_scalar_multiply(vec3i a, float alpha){
     vec3i result = {(int)(a.x * alpha), (int)(a.y * alpha), (int)(a.z * alpha)};
     return result;
 }
+
+
+float v_norm(vec3D a){
+    return sqrt(a.x*a.x + a.y*a.y + a.z*a.z);
+}

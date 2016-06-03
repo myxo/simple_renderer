@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+//TODO matrix function lead memory leak. Fix
+
 void matrix_initialize(matrix *mat, int n, int m){
     mat->n = n;
     mat->m = m;
@@ -105,4 +107,13 @@ void matrix_print(matrix *a){
         printf("\n");
     }
     printf("\n");
+}
+
+
+void matrix_identity(matrix *a){
+    for (int i = 0; i < a->n; i++){
+        for (int j = 0; j < a->m; j++){
+            a->array[i][j] = (i == j)? 1: 0;            
+        }
+    }
 }

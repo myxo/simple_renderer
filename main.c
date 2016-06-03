@@ -6,35 +6,9 @@
 #include <stdio.h>
 #include <limits>
 
-const TGAColor white = TGAColor(255, 255, 255, 255);
-const TGAColor red   = TGAColor(255, 0,   0,   255);
-const TGAColor green = TGAColor(0,   255, 0,   255);
-
 const int width  = 800;
 const int height = 800;
 const int depth  = 255;
-
-void line(vec2i p0, vec2i p1, TGAImage &image, TGAColor color) {
-    bool steep = false;
-    if (std::abs(p0.x-p1.x)<std::abs(p0.y-p1.y)) {
-        std::swap(p0.x, p0.y);
-        std::swap(p1.x, p1.y);
-        steep = true;
-    }
-    if (p0.x>p1.x) {
-        std::swap(p0, p1);
-    }
-
-    for (int x=p0.x; x<=p1.x; x++) {
-        float t = (x-p0.x)/(float)(p1.x-p0.x);
-        int y = p0.y*(1.-t) + p1.y*t;
-        if (steep) {
-            image.set(y, x, color);
-        } else {
-            image.set(x, y, color);
-        }
-    }
-}
 
 void find_triangle_bounding_box(vec3i *pts, vec3i *bboxmin, vec3i *bboxmax, int width, int height){
     bboxmin->x = width - 1;
@@ -51,6 +25,44 @@ void find_triangle_bounding_box(vec3i *pts, vec3i *bboxmin, vec3i *bboxmax, int 
         
     }
 }
+
+
+void viewport(int x, int y, int w, int h, matrix *res) {
+    matrix_identity(res);
+    res->array[0][3] = x+w/2.f;
+    res->array[1][3] = y+h/2.f;
+    res->array[2][3] = depth/2.f;
+
+    res->array[0][0] = w/2.f;
+    res->array[1][1] = h/2.f;
+    res->array[2][2] = depth/2.f;
+}
+
+
+void lookat(vec3D eye, vec3D center, vec3D up, matrix *result) {
+    vec3D z = v_sub(eye,center);
+    z = v_normilize(z);
+    vec3D x = v_vector_product(up,z);
+    x = v_normilize(x);
+    vec3D y = v_vector_product(z,x);
+    y = v_normilize(y);
+
+    matrix Minv, Tr; 
+    matrix_initialize(&Minv, 4, 4);
+    matrix_initialize(&Tr, 4, 4);
+    matrix_identity(&Minv);
+    matrix_identity(&Tr);
+
+    float array[16] = {x.x, x.y, x.z, 0, y.x, y.y, y.z, 0, z.x, z.y, z.z, 0, 0, 0, 0, 1};
+    matrix_set(&Minv, array, 16);
+        
+    Tr.array[0][3] = -center.x;
+    Tr.array[1][3] = -center.y;
+    Tr.array[2][3] = -center.z;
+    matrix_product(&Minv, &Tr, result);
+
+}
+
 
 vec2i barycentric_to_world2i(vec2i *pts, vec3D bar){
     vec2i result;
@@ -102,17 +114,42 @@ void triangle(model *m, vec3i t0, vec3i t1, vec3i t2, vec2i uv0, vec2i uv1, vec2
             float intensity = barycentric_to_float(intensity_array, bc_screen);
             if (intensity < 0) continue;
 
-            TGAColor color_diffuse = model_diffuse(m, uvP) * intensity;
-            image.set(P.x, P.y, color_diffuse);
+            TGAColor color_diffuse = model_diffuse(m, uvP);
+            image.set(P.x, P.y, color_diffuse * intensity);
         }
     }
 }
 
+void get_transform_matrix(matrix *ViewPort, matrix *Projection, matrix *ModelView, matrix *result){
+    matrix pre_result;
+    matrix_product(ViewPort, Projection, &pre_result);
+    matrix_product(&pre_result, ModelView, result);
 
+    matrix_delete(&pre_result);
+}
+
+vec3i get_screen_coords(matrix *transform, vec3D v){
+    matrix V;
+    matrix_initialize(&V, 4, 1);
+    float array[4] = {v.x, v.y, v.z, 1};
+    matrix_set(&V, array, 4);
+
+    matrix result;
+    
+    matrix_product(transform, &V, &result);
+
+    vec3i res = {result.array[0][0] / result.array[3][0], 
+                result.array[1][0] / result.array[3][0], 
+                result.array[2][0] / result.array[3][0]};
+    return res;
+}
 
 int main(int argc, char** argv){
     model m;
-    vec3D light_dir = {1, -1, 1};
+    vec3D light_dir = {-1,1,1};
+    vec3D eye       = {1,1,1};
+    vec3D center    = {0,0,0};
+
 
     if (2 == argc) {
         model_load(&m, argv[1]);
@@ -128,16 +165,41 @@ int main(int argc, char** argv){
 
     TGAImage image(width, height, TGAImage::RGB);
 
+    matrix modelView;
+    matrix_initialize(&modelView, 4, 4);
+    vec3D tmp = {0, 1, 0};
+    lookat(eye, center, tmp, &modelView);
+    // matrix_print(&modelView);
+
+    matrix Projection;
+    matrix_initialize(&Projection, 4, 4);
+    matrix_identity(&Projection);
+
+    Projection.array[3][2] = -1.0/v_norm(v_sub(eye,center));
+    // matrix_print(&Projection);
+
+    matrix ViewPort;
+    matrix_initialize(&ViewPort, 4, 4);
+    viewport(width/8, height/8, width*3/4, height*3/4, &ViewPort);
+    // matrix_print(&ViewPort);
+
+    matrix transform;
+    get_transform_matrix(&ViewPort, &Projection, &modelView, &transform);
+
+    matrix_print(&transform);
+
     for (int i = 0; i < m.fn; i++){
         vec3i screen_coords[3];
         vec3D world_coords[3];
         vec3D norm[3];
         for (int j = 0; j < 3; j++){
             vec3D v1 = m.verts[m.faces[i][0][j]];
-            screen_coords[j].x = (v1.x + 1.0) * width/2.0;
-            screen_coords[j].y = (v1.y + 1.0) * height/2.0;
-            screen_coords[j].z = (v1.z + 1.0) * depth/2.0;
+            // screen_coords[j].x = (v1.x + 1.0) * width/2.0;
+            // screen_coords[j].y = (v1.y + 1.0) * height/2.0;
+            // screen_coords[j].z = (v1.z + 1.0) * depth/2.0;
 
+            screen_coords[j] = get_screen_coords(&transform, v1);
+            // printf("%d %d %d | %f %f %f\n", screen_coords[j].x, screen_coords[j].y, screen_coords[j].z, v1.x, v1.y, v1.z);
             world_coords[j] = v1;
 
             norm[j] = m.norms[m.faces[i][0][j]];
@@ -156,23 +218,7 @@ int main(int argc, char** argv){
         }
     }
 
-    float a[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    float b[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    matrix A, B, C;
-    matrix_initialize(&A, 3, 3);
-    matrix_initialize(&B, 3, 3);
-    matrix_set(&A, a, 9);
-    matrix_set(&B, b, 9);
 
-    matrix_product(&A, &B, &C);
-
-    matrix_print(&A);
-    matrix_print(&B);
-    matrix_print(&C);
-
-    matrix_delete(&A);
-    matrix_delete(&B);
-    matrix_delete(&C);
 
 
     // model_print(&m);

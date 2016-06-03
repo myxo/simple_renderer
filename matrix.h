@@ -15,5 +15,7 @@ void matrix_sub(matrix *a, matrix *b, matrix *res);
 void matrix_product_scalar(matrix *a, float alpha, matrix *res);
 void matrix_product(matrix *a, matrix *b, matrix *res);
 
+void matrix_identity(matrix *a);
+
 void matrix_set(matrix *a, float *array, int length);
 void matrix_print(matrix *a);

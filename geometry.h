@@ -18,7 +18,9 @@ vec3D v_sub(vec3D left, vec3D right);
 vec3D v_scalar_multiply(vec3D a, float alpha);
 vec3D v_vector_product(vec3D a, vec3D b);
 float v_scalar_product(vec3D a, vec3D b);
+// TODO typo, fix it
 vec3D v_normilize(vec3D v);
+float v_norm(vec3D a);
 
 
 vec3i vi_sum(vec3i left, vec3i right);
