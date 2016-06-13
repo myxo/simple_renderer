@@ -12,8 +12,8 @@ const int width  = 800;
 const int height = 800;
 const int depth  = 255;
 
-vec3D light_dir = {1, 0, 1};
-vec3D eye       = {1, 1, 2};
+vec3D light_dir = {1, 1, 1};
+vec3D eye       = {1, 1, 3};
 vec3D center    = {0, 0, 0};
 vec3D up        = {0, 1, 0};
 
@@ -27,23 +27,25 @@ vec2i uv[3];
 vec3i vertex_shader(int iface, int nthvert){
     varying_intensity[nthvert] = std::max(0.f, 
                 v_scalar_product(m.norms[m.faces[iface][0][nthvert]], light_dir));
-    
-    vec3D v = m.verts[m.faces[iface][0][nthvert]];
     uv[nthvert] = model_uv(&m, iface, nthvert);
 
+    vec3D v = m.verts[m.faces[iface][0][nthvert]];
     return get_screen_coords(&transform, v);
 
 }
 
 bool fragment_shader(vec3D bar, TGAColor &color){
-    float intensity = varying_intensity[0] * bar.x 
-                    + varying_intensity[1] * bar.y 
-                    + varying_intensity[2] * bar.z;   // interpolate intensity for the current pixel
+    // float intensity = varying_intensity[0] * bar.x 
+                    // + varying_intensity[1] * bar.y 
+                    // + varying_intensity[2] * bar.z;   // interpolate intensity for the current pixel
     // color = TGAColor(255, 255, 255)*intensity;
 
-    if (intensity < 0) return true;
-
     vec2i uvP = barycentric_to_world2i(uv, bar);
+    vec3D norm = model_normal_map(&m, uvP);
+    float intensity = v_scalar_product(norm, light_dir);
+
+    if (intensity < 0) intensity = 0;
+
     color = model_diffuse(&m, uvP) * intensity;
     return false;
 }
@@ -66,9 +68,7 @@ int main(int argc, char** argv){
     if (2 == argc) {
         model_load(&m, argv[1]);
     } else {
-        // model_load(&m, "obj/test.obj");
         model_load(&m, "obj/african_head.obj");
-        // model_load(&m, "obj/Crate1.obj");
     }
 
     light_dir = v_normilize(light_dir);

@@ -75,6 +75,17 @@ TGAColor model_diffuse(model *m, vec2i uv) {
     return m->diffusemap.get(uv.x, uv.y);
 }
 
+vec3D model_normal_map(model *m, vec2i p){
+    TGAColor tmp = m->normalmap.get(p.x, p.y);
+
+    vec3D res;
+    res.x = (float)tmp.r/255.f*2.f - 1.f;
+    res.y = (float)tmp.g/255.f*2.f - 1.f;
+    res.z = (float)tmp.b/255.f*2.f - 1.f;
+    res = v_normilize(res);
+    return res;
+}
+
 vec2i model_uv(model *m, int iface, int nvert) {
     int idx = m->faces[iface][1][nvert];
     vec2i result = {(int)(m->uv[idx].x*m->diffusemap.get_width()), (int)(m->uv[idx].y*m->diffusemap.get_height())};
@@ -124,4 +135,5 @@ void model_load(model *m, char *filename){
     }
 
     model_load_texture(filename, "_diffuse.tga", m->diffusemap);
+    model_load_texture(filename, "_nm.tga", m->normalmap);
 }
