@@ -7,19 +7,20 @@
 #include <stdio.h>
 #include <limits>
 #include <sys/time.h>
+#include <math.h>
 
 const int width  = 800;
 const int height = 800;
 const int depth  = 255;
 
-vec3D light_dir = {1, 1, 1};
-vec3D eye       = {1, 1, 3};
+vec3D light_dir = {1, 3, 1};
+vec3D eye       = {1, 0, 3};
 vec3D center    = {0, 0, 0};
 vec3D up        = {0, 1, 0};
 
 model m;
 
-matrix modelView, Projection, ViewPort, transform;
+matrix modelView, Projection, ViewPort, transform, M, MIT;
 
 float varying_intensity[3];
 vec2i uv[3];
@@ -35,18 +36,24 @@ vec3i vertex_shader(int iface, int nthvert){
 }
 
 bool fragment_shader(vec3D bar, TGAColor &color){
-    // float intensity = varying_intensity[0] * bar.x 
-                    // + varying_intensity[1] * bar.y 
-                    // + varying_intensity[2] * bar.z;   // interpolate intensity for the current pixel
-    // color = TGAColor(255, 255, 255)*intensity;
 
     vec2i uvP = barycentric_to_world2i(uv, bar);
     vec3D norm = model_normal_map(&m, uvP);
-    float intensity = v_scalar_product(norm, light_dir);
+    // norm = v_normilize(norm);
 
-    if (intensity < 0) intensity = 0;
+    vec3D r = v_sub(v_scalar_multiply(norm, (v_scalar_product(norm, light_dir) * 2.0)), light_dir);   // reflected light
+    r = v_normilize(r);
 
-    color = model_diffuse(&m, uvP) * intensity;
+    float spec = pow(std::max(r.z, 0.0f), model_specular(&m, uvP));
+    float diff = std::max(0.f, v_scalar_product(norm, light_dir));
+
+    // if (intensity < 0) intensity = 0;
+
+    color = model_diffuse(&m, uvP);
+    // color = TGAColor(255, 255, 255);
+    for (int i=0; i<3; i++) 
+        color[i] = std::min<float>(0 + color[i]*(1.0*diff + 0.9*spec), 255);
+    
     return false;
 }
 
@@ -62,6 +69,9 @@ void transform_matrix_initialization(){
     viewport(width/8, height/8, width*3/4, height*3/4, &ViewPort);
 
     get_transform_matrix(&ViewPort, &Projection, &modelView, &transform);
+
+    matrix_initialize(&M, 4, 4);
+    matrix_product(&Projection, &modelView, &M);
 }
 
 int main(int argc, char** argv){
@@ -79,7 +89,8 @@ int main(int argc, char** argv){
     TGAImage image(width, height, TGAImage::RGB);
 
     transform_matrix_initialization();
-    
+
+
     // time measurements
     struct timeval tval_before, tval_after, tval_result;
     gettimeofday(&tval_before, NULL);

@@ -2,6 +2,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
 //TODO matrix function lead memory leak. Fix
 

@@ -35,6 +35,7 @@ void viewport(int x, int y, int w, int h, matrix *res) {
 }
 
 
+// Make ModelView matrix
 void lookat(vec3D eye, vec3D center, vec3D up, matrix *result) {
     vec3D z = v_sub(eye,center);
     z = v_normilize(z);
