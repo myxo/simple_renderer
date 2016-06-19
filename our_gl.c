@@ -27,11 +27,11 @@ void viewport(int x, int y, int w, int h, matrix *res) {
     matrix_identity(res);
     res->array[0][3] = x+w/2.f;
     res->array[1][3] = y+h/2.f;
-    res->array[2][3] = 255.f/2.f;
+    res->array[2][3] = 2000.f/2.f;
 
     res->array[0][0] = w/2.f;
     res->array[1][1] = h/2.f;
-    res->array[2][2] = 255.f/2.f;
+    res->array[2][2] = 2000.f/2.f;
 }
 
 
@@ -50,14 +50,28 @@ void lookat(vec3D eye, vec3D center, vec3D up, matrix *result) {
     matrix_identity(&Minv);
     matrix_identity(&Tr);
 
-    float array[16] = {x.x, x.y, x.z, 0, y.x, y.y, y.z, 0, z.x, z.y, z.z, 0, 0, 0, 0, 1};
-    matrix_set(&Minv, array, 16);
+    float array[16] = {x.x, x.y, x.z, -center.x, y.x, y.y, y.z, -center.y, z.x, z.y, z.z, -center.z, 0, 0, 0, 1};
+    matrix_set(result, array, 16);
+    // matrix_set(&Minv, array, 16);
         
-    Tr.array[0][3] = -center.x;
-    Tr.array[1][3] = -center.y;
-    Tr.array[2][3] = -center.z;
-    matrix_product(&Minv, &Tr, result);
+    // Tr.array[0][3] = -center.x;
+    // Tr.array[1][3] = -center.y;
+    // Tr.array[2][3] = -center.z;
+    // matrix_product(&Minv, &Tr, result);
 
+}
+
+
+vec3D point_transform(matrix *mat, vec3D p){
+    matrix ptr, res_emb;
+    matrix_embed_from_point(&ptr, p);
+
+    matrix_product(mat, &ptr, &res_emb);
+
+    matrix tmp;
+    matrix_product_scalar(&res_emb, res_emb.array[3][0], &tmp);
+    vec3D res = {tmp.array[0][0], tmp.array[1][0], tmp.array[2][0]};
+    return res;
 }
 
 
@@ -65,6 +79,24 @@ vec2i barycentric_to_world2i(vec2i *pts, vec3D bar){
     vec2i result;
     result.x = pts[0].x * bar.x + pts[1].x * bar.y + pts[2].x * bar.z;
     result.y = pts[0].y * bar.x + pts[1].y * bar.y + pts[2].y * bar.z;
+    return result;
+}
+
+
+
+vec3i barycentric_to_world3i(vec3i *pts, vec3D bar){
+    vec3i result;
+    result.x = pts[0].x * bar.x + pts[1].x * bar.y + pts[2].x * bar.z;
+    result.y = pts[0].y * bar.x + pts[1].y * bar.y + pts[2].y * bar.z;
+    result.z = pts[0].z * bar.x + pts[1].z * bar.y + pts[2].z * bar.z;
+    return result;
+}
+
+vec3D barycentric_to_world3D(vec3D *pts, vec3D bar){
+    vec3D result;
+    result.x = pts[0].x * bar.x + pts[1].x * bar.y + pts[2].x * bar.z;
+    result.y = pts[0].y * bar.x + pts[1].y * bar.y + pts[2].y * bar.z;
+    result.z = pts[0].z * bar.x + pts[1].z * bar.y + pts[2].z * bar.z;
     return result;
 }
 
@@ -115,13 +147,13 @@ void triangle(model *m, vec3i pts[3], vec2i uv_pts[3], TGAImage &image,
     }
 }
 
-void get_transform_matrix(matrix *ViewPort, matrix *Projection, matrix *ModelView, matrix *result){
-    matrix pre_result;
-    matrix_product(ViewPort, Projection, &pre_result);
-    matrix_product(&pre_result, ModelView, result);
+// void get_transform_matrix(matrix *ViewPort, matrix *Projection, matrix *ModelView, matrix *result){
+//     matrix pre_result;
+//     matrix_product(ViewPort, Projection, &pre_result);
+//     matrix_product(&pre_result, ModelView, result);
 
-    matrix_delete(&pre_result);
-}
+//     matrix_delete(&pre_result);
+// }
 
 vec3i get_screen_coords(matrix *transform, vec3D v){
     matrix V;
@@ -136,5 +168,6 @@ vec3i get_screen_coords(matrix *transform, vec3D v){
     vec3i res ={result.array[0][0] / result.array[3][0], 
                 result.array[1][0] / result.array[3][0], 
                 result.array[2][0] / result.array[3][0]};
+    matrix_delete(&V);
     return res;
 }

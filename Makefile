@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-Wall -std=c++11 -g -Wno-write-strings -Wno-narrowing -O1 -pg
+CFLAGS=-Wall -g -std=c++11 -Wno-write-strings -Wno-narrowing -O0
 
 main: main.c model.o tgaimage.o geometry.o matrix.o our_gl.o
 	$(CC) $(CFLAGS) main.c model.o tgaimage.o geometry.o matrix.o  our_gl.o -o main 
