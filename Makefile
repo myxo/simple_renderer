@@ -1,8 +1,8 @@
 CC=g++
 CFLAGS=-Wall -g -std=c++11 -Wno-write-strings -Wno-narrowing -O0
 
-main: main.c model.o tgaimage.o geometry.o matrix.o our_gl.o
-	$(CC) $(CFLAGS) main.c model.o tgaimage.o geometry.o matrix.o  our_gl.o -o main 
+main: main.c model.o tgaimage.o geometry.o matrix.o our_gl.o shader.o
+	$(CC) $(CFLAGS) main.c model.o tgaimage.o geometry.o matrix.o  our_gl.o shader.o -o main 
 
 model.o: model.c model.h
 	$(CC) $(CFLAGS) -c model.c
@@ -18,6 +18,9 @@ matrix.o: matrix.c matrix.h
 
 our_gl.o: our_gl.c our_gl.h
 	$(CC) $(CFLAGS) -c our_gl.c
+
+shader.o: shader.c shader.h
+	$(CC) $(CFLAGS) -c shader.c
 
 clean:
 	rm main *.o

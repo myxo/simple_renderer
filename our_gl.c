@@ -3,6 +3,12 @@
 #include "geometry.h"
 #include "matrix.h"
 #include "model.h"
+#include "shader.h"
+
+
+matrix modelView, Projection, ViewPort, Transform, M, MIT;
+int depth = 2000;
+
 
 void find_triangle_bounding_box(vec3i *pts, vec3i *bboxmin, vec3i *bboxmax, int width, int height){
     bboxmin->x = width - 1;
@@ -22,47 +28,50 @@ void find_triangle_bounding_box(vec3i *pts, vec3i *bboxmin, vec3i *bboxmax, int 
 
 
 
-// TODO hardcode (255 is depth)
-void viewport(int x, int y, int w, int h, matrix *res) {
-    matrix_identity(res);
-    res->array[0][3] = x+w/2.f;
-    res->array[1][3] = y+h/2.f;
-    res->array[2][3] = 2000.f/2.f;
+void viewport(int x, int y, int w, int h) {
+    matrix_identity(&ViewPort);
+    ViewPort.array[0][3] = x+w/2.f;
+    ViewPort.array[1][3] = y+h/2.f;
+    ViewPort.array[2][3] = depth/2.f;
 
-    res->array[0][0] = w/2.f;
-    res->array[1][1] = h/2.f;
-    res->array[2][2] = 2000.f/2.f;
+    ViewPort.array[0][0] = w/2.f;
+    ViewPort.array[1][1] = h/2.f;
+    ViewPort.array[2][2] = depth/2.f;
 }
 
 
 // Make ModelView matrix
-void lookat(vec3D eye, vec3D center, vec3D up, matrix *result) {
-    vec3D z = v_sub(eye,center);
-    z = v_normilize(z);
-    vec3D x = v_vector_product(up,z);
-    x = v_normilize(x);
-    vec3D y = v_vector_product(z,x);
-    y = v_normilize(y);
+void lookat(vec3D eye, vec3D center, vec3D up) {
+    vec3D z = v_normilize(v_sub(eye,center));
+    vec3D x = v_normilize(v_vector_product(up,z));
+    vec3D y = v_normilize(v_vector_product(z,x));
 
-    matrix Minv, Tr; 
-    matrix_initialize(&Minv, 4, 4);
-    matrix_initialize(&Tr, 4, 4);
-    matrix_identity(&Minv);
-    matrix_identity(&Tr);
+    float array[16] = { x.x,    x.y,    x.z, -center.x, 
+                        y.x,    y.y,    y.z, -center.y, 
+                        z.x,    z.y,    z.z, -center.z, 
+                        0,      0,      0,    1};
+    matrix_set(&modelView, array, 16);
+}
 
-    float array[16] = {x.x, x.y, x.z, -center.x, y.x, y.y, y.z, -center.y, z.x, z.y, z.z, -center.z, 0, 0, 0, 1};
-    matrix_set(result, array, 16);
-    // matrix_set(&Minv, array, 16);
-        
-    // Tr.array[0][3] = -center.x;
-    // Tr.array[1][3] = -center.y;
-    // Tr.array[2][3] = -center.z;
-    // matrix_product(&Minv, &Tr, result);
+void projection(float alpha){
+    matrix_identity(&Projection);
+    Projection.array[3][2] = alpha;
+}
 
+void transform(){
+    matrix *list[3] = {&ViewPort, &Projection, &modelView};
+    matrix_list_product(list, 3, &Transform);
 }
 
 
-vec3D point_transform(matrix *mat, vec3D p){
+void matrix_initialization(){
+    matrix_initialize(&modelView, 4, 4);
+    matrix_initialize(&Projection, 4, 4);
+    matrix_initialize(&ViewPort, 4, 4);
+}
+
+
+vec3D point_Transform(matrix *mat, vec3D p){
     matrix ptr, res_emb;
     matrix_embed_from_point(&ptr, p);
 
@@ -119,9 +128,7 @@ vec3D barycentric(vec3i *pts, vec2i P) {
     return res;
 }
 
-void triangle(model *m, vec3i pts[3], vec2i uv_pts[3], TGAImage &image, 
-            float *intensity_array, int *zbuffer, 
-            bool (*fragment_shader)(vec3D bar, TGAColor &color)){
+void triangle(model *m, Shader *shader, vec3i pts[3], TGAImage &image, int *zbuffer){
 
     vec3i bboxmin, bboxmax;
     find_triangle_bounding_box(pts, &bboxmin, &bboxmax, image.get_width(), image.get_height());
@@ -137,7 +144,7 @@ void triangle(model *m, vec3i pts[3], vec2i uv_pts[3], TGAImage &image,
 
 
             TGAColor color_diffuse;
-            bool discard = fragment_shader(bc_screen, color_diffuse);
+            bool discard = shader->fragment_shader(shader, bc_screen, color_diffuse);
 
             if (!discard){
                 zbuffer[P.x+P.y*image.get_width()] = frag_depth;
@@ -147,15 +154,9 @@ void triangle(model *m, vec3i pts[3], vec2i uv_pts[3], TGAImage &image,
     }
 }
 
-// void get_transform_matrix(matrix *ViewPort, matrix *Projection, matrix *ModelView, matrix *result){
-//     matrix pre_result;
-//     matrix_product(ViewPort, Projection, &pre_result);
-//     matrix_product(&pre_result, ModelView, result);
 
-//     matrix_delete(&pre_result);
-// }
 
-vec3i get_screen_coords(matrix *transform, vec3D v){
+vec3i get_screen_coords(matrix *Transform, vec3D v){
     matrix V;
     matrix_initialize(&V, 4, 1);
     float array[4] = {v.x, v.y, v.z, 1};
@@ -163,7 +164,7 @@ vec3i get_screen_coords(matrix *transform, vec3D v){
 
     matrix result;
     
-    matrix_product(transform, &V, &result);
+    matrix_product(Transform, &V, &result);
 
     vec3i res ={result.array[0][0] / result.array[3][0], 
                 result.array[1][0] / result.array[3][0], 

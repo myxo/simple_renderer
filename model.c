@@ -71,6 +71,11 @@ void model_load_texture(char *filename, const char *suffix, TGAImage &img) {
     }
 }
 
+
+vec3D model_vertex(model *m, int iface, int nvert){
+    return m->verts[m->faces[iface][0][nvert]];
+}
+
 TGAColor model_diffuse(model *m, vec2i uv) {
     return m->diffusemap.get(uv.x, uv.y);
 }
@@ -93,9 +98,6 @@ vec2i model_uv(model *m, int iface, int nvert) {
 }
 
 float model_specular(model *m, vec2i uv){
-    // vec2i p = {(int)uv.x*m->specularmap.get_width(), (int)uv.y*m->specularmap.get_height()};
-    // printf("%d %d\n", uv.x, uv.y);
-    // return m->specularmap.get(p.x, p.y)[0]/1.f;
     return (float)m->specularmap.get(uv.x, uv.y)[0];
 }
 
